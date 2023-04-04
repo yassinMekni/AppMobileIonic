@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private toastController: ToastController) {}
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'SMS a été envoyé avec succès',
+      duration: 2500,
+      position: position,
+      color: 'success',
+      icon:'envoyé'
+    });
+
+    await toast.present();
+}
 }

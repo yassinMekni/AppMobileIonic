@@ -1,0 +1,61 @@
+/* my-form.component.css */
+.my-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius:20px;
+    background-color:#f2f2f2;
+  }
+  
+  ion-item {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  
+  
+  ion-input {
+   
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  
+  .radio-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .radio-buttons label {
+    display: flex;
+   
+    align-items: center;
+    margin-right:40px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .radio-buttons input[type="radio"] {
+    margin-right: 5px;
+    font-size: 15px;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  .color-red{
+    color: red;
+  }
+  ion-label{
+    font-weight: bold;
+  }
+  

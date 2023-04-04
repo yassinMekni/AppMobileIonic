@@ -1,0 +1,78 @@
+
+ion-avatar {
+    height: 45px;
+    width: 45px;
+}
+h3 {
+    font-weight: 700;
+    font-size: 15px;
+}
+.flex_box {
+    display: flex;
+    justify-content: space-between;
+}
+ion-note {
+    font-size: 13px;
+}
+.text-icon {
+    font-size: 22px;
+    margin-bottom: -6px;
+}
+p {
+    color: grey;
+}
+#p{
+    color: orange;
+}
+#a{
+    color: red;
+}
+#b{
+    color: green;
+}
+
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+.cart{
+    width: 240px;
+    height: 100px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    
+}
+.cdd{
+    border-radius: 15px;
+    width: 100%;
+    
+}
+.kk{
+    background: rgb(206,12,48);
+background: linear-gradient(90deg, rgba(206,12,48,1) 0%, rgba(3,0,36,1) 100%);
+}
+
+.mt{
+    margin-top: 9px;
+}
+
+.ion-card-header{
+    padding: 10px;
+}
+.item-native > .item-native{
+    padding-inline-start: 0 !important;
+}
+.carttt{
+    margin-right: 15px;
+}
+.recherche{
+    margin-right: 15px;
+}
+.annuler{
+    width: 19px;
+    height: 19px;
+    position: relative;
+    top: 2px;
+
+}

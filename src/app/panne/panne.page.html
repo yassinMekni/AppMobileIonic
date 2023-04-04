@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      
+      <ion-icon name="flower"></ion-icon> Remorquage
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <form [formGroup]="monFormulaire" (ngSubmit)="onSubmit()" class="my-form">
+  <ion-item >
+    <ion-label position="floating"><ion-icon name="call-outline" class="icons-input"></ion-icon> Votre téléphone <span class="color-red">*</span></ion-label>
+    <ion-input formControlName="tel" type="number"></ion-input>    
+    <ion-note *ngIf="monFormulaire.controls['tel'].invalid && (monFormulaire.controls['tel'].dirty || monFormulaire.controls['tel'].touched) && monFormulaire.controls['tel'].errors?.['required']" slot="error">Invalid numéro</ion-note>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating"><ion-icon name="car-sport-outline" class="icons-input"></ion-icon> Immatriculation <span class="color-red">*</span></ion-label>
+    <ion-input type="text" formControlName="matricule"></ion-input>
+    <ion-note *ngIf="monFormulaire.controls['matricule'].invalid && (monFormulaire.controls['matricule'].dirty || monFormulaire.controls['matricule'].touched) && monFormulaire.controls['matricule'].errors?.['required']" slot="error">Invalid matricule</ion-note>
+ 
+  </ion-item>
+  <div class="radio-buttons">
+    <label>
+      <input type="radio" name="incident" value="accident">
+      <span>Accident</span>
+    </label>
+    <label>
+      <input type="radio" name="incident" value="panne"  [checked]="true">
+      <span>Panne</span>
+    </label>
+  </div>
+  <ion-item >
+    <ion-label position="floating"><ion-icon name="pin-outline" class="icons-input"></ion-icon> Votre destination<span class="color-red">*</span></ion-label>
+    <ion-input type="text" formControlName="dest"></ion-input>
+    <ion-note *ngIf="monFormulaire.controls['dest'].invalid && (monFormulaire.controls['dest'].dirty || monFormulaire.controls['dest'].touched) && monFormulaire.controls['dest'].errors?.['required']" slot="error">Invalid Destination</ion-note>
+
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating"><ion-icon name="person-outline" class="icons-input"></ion-icon> Nombre passager <span class="color-red">*</span></ion-label>
+    <ion-input type="number" formControlName="personne" max="4" min="0"></ion-input>
+    <ion-note *ngIf="monFormulaire.controls['personne'].invalid && (monFormulaire.controls['personne'].dirty || monFormulaire.controls['personne'].touched) && monFormulaire.controls['personne'].errors?.['required']" slot="error">Invalid personne</ion-note>
+
+  </ion-item>
+  <ion-item >
+    <ion-label position=""><ion-icon name="person-outline" class="icons-input"></ion-icon> Imobilisation</ion-label>
+    <ion-toggle slot="end" [checked]="true"></ion-toggle>
+  </ion-item>
+  <ion-item >
+    <ion-label position=""><ion-icon name="person-outline" class="icons-input"></ion-icon> Marchandise</ion-label>
+    <ion-toggle slot="end" [checked]="true"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"><ion-icon name="eye-outline" class="icons-input"></ion-icon> Observation</ion-label>
+    <ion-textarea placeholder="" [autoGrow]="true" formControlName="message"></ion-textarea>
+  </ion-item>
+  <ion-button type="submit" expand="block" [disabled]="!monFormulaire.valid" (click)="presentToast('top')" routerLink="/acceuil">Envoyer</ion-button>
+  <ion-button  type="submit" expand="block"  (click)="onCancel()" color="danger" >Annular</ion-button>
+
+  </form>
+
+
+
+
+  
+</ion-content> 
+

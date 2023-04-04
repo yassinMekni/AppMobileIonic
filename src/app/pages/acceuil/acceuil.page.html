@@ -1,0 +1,229 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title><ion-icon name="settings"></ion-icon>    Configuration </ion-title>
+      </ion-toolbar >
+    </ion-header >
+
+   
+    <!----> <ion-content class="ion-padding" color="light" >
+   
+    <ion-list>
+      <div style="margin-top: 30px;">
+      <ion-item routerLink="/detail">
+        
+          <img  src="/assets/icon/yassin.jpeg " class="profil">
+        
+        <ion-label>
+          <h2 id="mekni">Mekni yassin</h2>
+          <h3 id="p">modifier le profil <ion-icon name="pencil-outline"></ion-icon></h3>
+        </ion-label>
+      </ion-item>
+    </div>
+    </ion-list>
+      <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+      <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+      <ion-list >
+      <div style="margin-top: 50px;">
+      <ion-reorder-group >
+        <ion-reorder>
+          <ion-item detail detail (click)="setOpen(true)">
+            <ion-label>
+              <ion-icon name="create"></ion-icon>  Mise à jour sms/tel 
+            </ion-label>
+          </ion-item>
+        </ion-reorder>
+        <ion-reorder>
+          <ion-item>
+            <ion-label> <ion-icon name="globe"></ion-icon> Langue</ion-label>
+            <ion-select placeholder="français">
+              <ion-select-option value="">français</ion-select-option>
+              <ion-select-option value="nes">Anglais</ion-select-option>
+              <ion-select-option value="n64">espagnol</ion-select-option>
+              <ion-select-option value="ps">allemand</ion-select-option>
+              <ion-select-option value="genesis">italien</ion-select-option>
+              <ion-select-option value="saturn">japonais</ion-select-option>
+             
+            </ion-select>
+          </ion-item>
+        </ion-reorder>
+    
+        <ion-reorder >
+          <ion-item >
+            <ion-label >
+              <ion-icon name="moon" ></ion-icon>
+          Mode sombre
+            </ion-label>
+            <ion-toggle color="primary" [checked]="true"></ion-toggle>
+          </ion-item>
+        </ion-reorder>
+    
+       
+    
+        <ion-reorder>
+          <ion-item detail>
+            
+            <ion-label>
+              <ion-icon name="help-circle-outline"></ion-icon>
+              Aide
+            </ion-label>
+          </ion-item>
+        </ion-reorder>
+        
+   
+                <ion-reorder>
+          <ion-item detail>
+            
+            <ion-label>
+              <ion-icon name="information-circle-outline"></ion-icon>
+              A propos
+            </ion-label>
+          </ion-item>
+        </ion-reorder>
+        <ion-reorder>
+          <ion-item >
+            
+            <ion-label id="dec">
+              <ion-icon name="log-out-outline"></ion-icon>
+              Déconnexion
+            </ion-label>
+          </ion-item>
+        </ion-reorder>
+    
+  
+      </ion-reorder-group>
+    </div>
+    </ion-list>
+
+
+
+
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          
+        </ion-buttons>
+        <ion-title>Digital assistance</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Mode sombre</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Confirme</ion-button>
+            </ion-buttons>
+            <ion-buttons slot="start">
+              <ion-button (click)="setOpen(false)">Annuler</ion-button>
+            </ion-buttons>
+            <ion-progress-bar type="indeterminate"></ion-progress-bar>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content color="light" >
+          <ion-card>
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating"><ion-icon name="call"mask="(000) 000-0000" placeholder="Numéro de téléphone"></ion-icon>Numéro Téléphone :</ion-label>
+              <ion-input placeholder="Saisie le numéro de télephone"></ion-input>
+            </ion-item>
+          
+          
+            <ion-item>
+              <ion-label position="floating"><ion-icon name="chatbubble-ellipses"></ion-icon> Numéro SMS :</ion-label>
+              <ion-input placeholder="saisie le numéro de SMS"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+          </ion-content>
+    
+           
+          
+          
+          
+       
+      </ng-template>
+    </ion-modal>
+    <ion-content>
+      <div class="image">
+      <ion-img src="/assets/icon/maps1.jpg" ></ion-img>
+    </div>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+
+      <ion-fab-button id="open-modal" expand="block" >
+        
+        <ion-icon name="duplicate-outline"></ion-icon>
+        
+      </ion-fab-button >
+      <br>
+   
+
+      <ion-fab-button (click)="ppresentAlert()" color="danger">
+        
+        <ion-icon name="call"></ion-icon>
+       
+      </ion-fab-button>
+    </ion-fab>
+
+
+    <ion-modal
+    trigger="open-modal"
+    [initialBreakpoint]="0.30"
+    [breakpoints]="[0.5, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div class="centree" >
+          <div class="cartt" id="borderr" style="    margin-right: 5px;"routerLink="/panne" >
+            <div style="width: 100%;">
+              <img alt="Silhouette of mountains" src="/assets/icon/panne2.png" />
+              <ion-icon name="alert-circle-outline" class="icon-cartt"></ion-icon>
+            </div>
+          <p>Remorquage</p>
+          </div>
+          
+          <div class="cartt" style="    margin-left: 5px;" routerLink="/depannage">
+            <div style="width: 100%;" >
+              <img alt="Silhouette of mountains" src="/assets/icon/remorquage.png" />
+              <ion-icon name="alert-circle-outline" style="color: gray;" class="icon-cartt"></ion-icon>
+            </div>
+            <p >Dépannage</p>
+          </div>
+    </div>
+  
+    
+    
+   
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+
+
+  
+
+
+
+
+  
+
+    
+    
+    </ion-content>
+
+
+
+
+
+   
